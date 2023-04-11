@@ -1,0 +1,4 @@
+$(eval $(call addlib_s,libheaders,$(CONFIG_LIBHEADERS)))
+
+CINCLUDES-$(CONFIG_LIBHEADERS)	+= -I$(LIBHEADERS_BASE)/include
+CXXINCLUDES-$(CONFIG_LIBHEADERS)	+= -I$(LIBHEADERS_BASE)/include

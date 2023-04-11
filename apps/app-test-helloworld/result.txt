@@ -1,0 +1,410 @@
+[1;256r[256;256H[6n
+Google, Inc.
+Serial Graphics Adapter 03/05/17
+SGABIOS $Id: sgabios.S 8 2010-04-22 00:03:40Z nlaredo $ (generic@generic) Sun, 05 Mar 2017 16:09:17 +0100
+Term: 80x24
+4 0
+[2JSeaBIOS (version 1.10.2-1ubuntu1)
+
+
+iPXE (http://ipxe.org) 00:02.0 C100 PCI2.10 PnP PMM+3FF8DAD0+3FECDAD0 C100
+Press Ctrl-B to configure iPXE (PCI 00:02.0)...                                                                               
+
+
+Booting from ROM...
+[0m[32m[    0.000000] [0m[1m[32mInfo:[0m [0m[33m[libkvmplat] [0m[36m<bootinfo.c @   57> [0mUnikraft Epimetheus (0.12.0~0c57d5e1-custom)
+[0m[0m[32m[    0.000000] [0m[1m[32mInfo:[0m [0m[33m[libkvmplat] [0m[36m<bootinfo.c @   59> [0mArchitecture: x86_64
+[0m[0m[32m[    0.000000] [0m[1m[32mInfo:[0m [0m[33m[libkvmplat] [0m[36m<bootinfo.c @   64> [0mBoot loader : qemu-multiboot
+[0m[0m[32m[    0.000000] [0m[1m[32mInfo:[0m [0m[33m[libkvmplat] [0m[36m<bootinfo.c @   67> [0mCommand line: build/app-test-helloworld_kvm-x86_64 
+[0m[0m[32m[    0.000000] [0m[1m[32mInfo:[0m [0m[33m[libkvmplat] [0m[36m<bootinfo.c @   69> [0mBoot memory map:
+[0m[0m[32m[    0.000000] [0m[1m[32mInfo:[0m [0m[33m[libkvmplat] [0m[36m<bootinfo.c @  113> [0m 000000100000-00000023b000 00000013b000 r-x 0000000000100000 krnl 
+[0m[0m[32m[    0.000000] [0m[1m[32mInfo:[0m [0m[33m[libkvmplat] [0m[36m<bootinfo.c @  113> [0m 00000023b000-000000294000 000000059000 r-- 000000000023b000 krnl 
+[0m[0m[32m[    0.000000] [0m[1m[32mInfo:[0m [0m[33m[libkvmplat] [0m[36m<bootinfo.c @  113> [0m 000000294000-000000382000 0000000ee000 rw- 0000000000294000 krnl 
+[0m[0m[32m[    0.000000] [0m[1m[32mInfo:[0m [0m[33m[libkvmplat] [0m[36m<bootinfo.c @  113> [0m 000000293160-000000294160 000000001000 rw- 0000000000293160 krnl 
+[0m[0m[32m[    0.000000] [0m[1m[32mInfo:[0m [0m[33m[libkvmplat] [0m[36m<bootinfo.c @  113> [0m 000000382000-000000382025 000000000025 r-- 0000000000382000 cmdl 
+[0m[0m[32m[    0.000000] [0m[1m[32mInfo:[0m [0m[33m[libkvmplat] [0m[36m<bootinfo.c @  113> [0m 000000383000-000000384000 000000001000 rw- 0000000000383000 cmdl 
+[0m[0m[32m[    0.000000] [0m[1m[32mInfo:[0m [0m[33m[libkvmplat] [0m[36m<bootinfo.c @  113> [0m 000000384000-000000394000 000000010000 rw- 0000000000384000 stck 
+[0m[0m[32m[    0.000000] [0m[1m[32mInfo:[0m [0m[33m[libkvmplat] [0m[36m<bootinfo.c @  113> [0m 000000394000-00003ffe0000 00003fc4c000 rw- 0000000000394000  
+[0m[0m[32m[    0.000000] [0m[1m[32mInfo:[0m [0m[33m[libkvmplat] [0m[36m<bootinfo.c @  113> [0m 00003ffe0000-000040000000 000000020000 r-- 000000003ffe0000 rsvd 
+[0m[0m[32m[    0.000000] [0m[1m[32mInfo:[0m [0m[33m[libkvmplat] [0m[36m<bootinfo.c @  113> [0m 0000feffc000-0000ff000000 000000004000 r-- 00000000feffc000 rsvd 
+[0m[0m[32m[    0.000000] [0m[1m[32mInfo:[0m [0m[33m[libkvmplat] [0m[36m<bootinfo.c @  113> [0m 0000fffc0000-000100000000 000000040000 r-- 00000000fffc0000 rsvd 
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libkvmplat] [0m[36m<acpi.c @   99> [0mACPI RSDP present at 0xf68b0
+[0m[0m[32m[    0.000000] [0m[1m[32mInfo:[0m [0m[33m[libkvmplat] [0m[36m<acpi.c @  116> [0mACPI version detected: [0m[0m1.0
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libkvmplat] [0m[36m<acpi.c @  145> [0mACPI RSDT present at 0x3ffe1703
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libkvmplat] [0m[36m<acpi.c @  180> [0mACPI MADT present at 0x3ffe1583
+[0m[0m[32m[    0.000000] [0m[1m[32mInfo:[0m [0m[33m[libkvmplat] [0m[36m<lcpu.c @  130> [0mBootstrapping processor has the ID 0
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libkvmplat] [0m[36m<lcpu.c @  185> [0mCopied AP 16-bit boot code to 0x8000
+[0m[0m[32m[    0.000000] [0m[1m[32mInfo:[0m [0m[33m[libkvmplat] [0m[36m<setup.c @  355> [0mSwitch from bootstrap stack to stack @0x394000
+[0m[0m[32m[    0.000000] [0m[1m[32mInfo:[0m [0m[33m[libukboot] [0m[36m<boot.c @  246> [0mUnikraft constructor table at 0x293000 - 0x293048
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libukboot] [0m[36m<boot.c @  249> [0mCall constructor: 0x228500())...
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libcontext] [0m[36m<ectx.c @   84> [0mLoad/store of extended CPU state: FXSAVE
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libukboot] [0m[36m<boot.c @  249> [0mCall constructor: 0x1118a0())...
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libukboot] [0m[36m<boot.c @  249> [0mCall constructor: 0x112310())...
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libukboot] [0m[36m<boot.c @  249> [0mCall constructor: 0x1145c0())...
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libukboot] [0m[36m<boot.c @  249> [0mCall constructor: 0x13b870())...
+[0m[0m[32m[    0.000000] [0m[1m[32mInfo:[0m [0m[33m[libuklibparam] [0m[36m<param.c @  113> [0mlibname: netdev, 72
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libukboot] [0m[36m<boot.c @  249> [0mCall constructor: 0x14f860())...
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libukboot] [0m[36m<boot.c @  249> [0mCall constructor: 0x15fa90())...
+[0m[0m[32m[    0.000000] [0m[1m[32mInfo:[0m [0m[33m[libuklibparam] [0m[36m<param.c @  113> [0mlibname: vfs, 96
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libukboot] [0m[36m<boot.c @  249> [0mCall constructor: 0x10f880())...
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libukbus] [0m[36m<bus.c @   52> [0mRegister bus handler: 0x294020
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libukboot] [0m[36m<boot.c @  249> [0mCall constructor: 0x110af0())...
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libukbus] [0m[36m<bus.c @   52> [0mRegister bus handler: 0x294080
+[0m[0m[32m[    0.000000] [0m[1m[32mInfo:[0m [0m[33m[libukboot] [0m[36m<boot.c @  259> [0mFound 0 library args
+[0m[0m[32m[    0.000000] [0m[1m[32mInfo:[0m [0m[33m[libukboot] [0m[36m<boot.c @  264> [0mInitialize memory allocator...
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libukboot] [0m[36m<boot.c @  197> [0mTrying 0x394000-0x3ffe0000 0x03 
+[0m[0m[32m[    0.000000] [0m[1m[32mInfo:[0m [0m[33m[libukallocbbuddy] [0m[36m<bbuddy.c @  516> [0mInitialize binary buddy allocator 394000
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libukallocbbuddy] [0m[36m<bbuddy.c @  473> [0m394000: Add allocate unit 39d000 - 39e000 (order 0)
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libukallocbbuddy] [0m[36m<bbuddy.c @  473> [0m394000: Add allocate unit 39e000 - 3a0000 (order 1)
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libukallocbbuddy] [0m[36m<bbuddy.c @  473> [0m394000: Add allocate unit 3a0000 - 3c0000 (order 5)
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libukallocbbuddy] [0m[36m<bbuddy.c @  473> [0m394000: Add allocate unit 3c0000 - 400000 (order 6)
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libukallocbbuddy] [0m[36m<bbuddy.c @  473> [0m394000: Add allocate unit 400000 - 800000 (order 10)
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libukallocbbuddy] [0m[36m<bbuddy.c @  473> [0m394000: Add allocate unit 800000 - 1000000 (order 11)
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libukallocbbuddy] [0m[36m<bbuddy.c @  473> [0m394000: Add allocate unit 1000000 - 2000000 (order 12)
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libukallocbbuddy] [0m[36m<bbuddy.c @  473> [0m394000: Add allocate unit 2000000 - 4000000 (order 13)
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libukallocbbuddy] [0m[36m<bbuddy.c @  473> [0m394000: Add allocate unit 4000000 - 8000000 (order 14)
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libukallocbbuddy] [0m[36m<bbuddy.c @  473> [0m394000: Add allocate unit 8000000 - 10000000 (order 15)
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libukallocbbuddy] [0m[36m<bbuddy.c @  473> [0m394000: Add allocate unit 10000000 - 20000000 (order 16)
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libukallocbbuddy] [0m[36m<bbuddy.c @  473> [0m394000: Add allocate unit 20000000 - 30000000 (order 16)
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libukallocbbuddy] [0m[36m<bbuddy.c @  473> [0m394000: Add allocate unit 30000000 - 38000000 (order 15)
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libukallocbbuddy] [0m[36m<bbuddy.c @  473> [0m394000: Add allocate unit 38000000 - 3c000000 (order 14)
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libukallocbbuddy] [0m[36m<bbuddy.c @  473> [0m394000: Add allocate unit 3c000000 - 3e000000 (order 13)
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libukallocbbuddy] [0m[36m<bbuddy.c @  473> [0m394000: Add allocate unit 3e000000 - 3f000000 (order 12)
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libukallocbbuddy] [0m[36m<bbuddy.c @  473> [0m394000: Add allocate unit 3f000000 - 3f800000 (order 11)
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libukallocbbuddy] [0m[36m<bbuddy.c @  473> [0m394000: Add allocate unit 3f800000 - 3fc00000 (order 10)
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libukallocbbuddy] [0m[36m<bbuddy.c @  473> [0m394000: Add allocate unit 3fc00000 - 3fe00000 (order 9)
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libukallocbbuddy] [0m[36m<bbuddy.c @  473> [0m394000: Add allocate unit 3fe00000 - 3ff00000 (order 8)
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libukallocbbuddy] [0m[36m<bbuddy.c @  473> [0m394000: Add allocate unit 3ff00000 - 3ff80000 (order 7)
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libukallocbbuddy] [0m[36m<bbuddy.c @  473> [0m394000: Add allocate unit 3ff80000 - 3ffc0000 (order 6)
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libukallocbbuddy] [0m[36m<bbuddy.c @  473> [0m394000: Add allocate unit 3ffc0000 - 3ffe0000 (order 5)
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libcontext] [0m[36m<tls.c @  174> [0mtls_area_init: target: 0x39d020 (968 bytes)
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libcontext] [0m[36m<tls.c @  176> [0mtls_area_init: copy (.tdata): 20 bytes
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libcontext] [0m[36m<tls.c @  178> [0mtls_area_init: uninitialized (.tbss): 744 bytes
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libcontext] [0m[36m<tls.c @  180> [0mtls_area_init: pad: 4 bytes
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libcontext] [0m[36m<tls.c @  182> [0mtls_area_init: tcb: 200 bytes
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libcontext] [0m[36m<tls.c @  184> [0mtls_area_init: tcb self ptr: 0x39d320
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libmuslglue] [0m[36m<__uk_init_tls.c @  212> [0mukarch_tls_tcb_init tcb 0x39d320
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libcontext] [0m[36m<tls.c @  204> [0m(tls_area): [0m[0m0039d020  [0m[0m0d [0m[0mf0 [0m[0mb0 [0m[0mb0 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m [0m[0mff [0m[0mff [0m[0mff [0m[0mff [0m[0mff [0m[0mff [0m[0mff [0m[0mff [0m[0m [0m[0m|[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m|[0m[0m
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libcontext] [0m[36m<tls.c @  204> [0m(tls_area): [0m[0m0039d030  [0m[0mff [0m[0mff [0m[0mff [0m[0mff [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m [0m[0m|[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m|[0m[0m
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libcontext] [0m[36m<tls.c @  204> [0m(tls_area): [0m[0m0039d040  [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m [0m[0m|[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m|[0m[0m
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libcontext] [0m[36m<tls.c @  204> [0m*
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libcontext] [0m[36m<tls.c @  204> [0m(tls_area): [0m[0m0039d320  [0m[0m20 [0m[0md3 [0m[0m39 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m33 [0m[0m00 [0m[0m [0m[0m|[0m[0m [0m[0m.[0m[0m9[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m3[0m[0m.[0m[0m|[0m[0m
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libcontext] [0m[36m<tls.c @  204> [0m(tls_area): [0m[0m0039d330  [0m[0m20 [0m[0md3 [0m[0m39 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m [0m[0m20 [0m[0md3 [0m[0m39 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m [0m[0m|[0m[0m [0m[0m.[0m[0m9[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m [0m[0m.[0m[0m9[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m|[0m[0m
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libcontext] [0m[36m<tls.c @  204> [0m(tls_area): [0m[0m0039d340  [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m35 [0m[0m00 [0m[0m [0m[0m|[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m5[0m[0m.[0m[0m|[0m[0m
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libcontext] [0m[36m<tls.c @  204> [0m(tls_area): [0m[0m0039d350  [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m36 [0m[0m00 [0m[0m [0m[0m|[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m6[0m[0m.[0m[0m|[0m[0m
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libcontext] [0m[36m<tls.c @  204> [0m(tls_area): [0m[0m0039d360  [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m37 [0m[0m00 [0m[0m [0m[0m|[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m7[0m[0m.[0m[0m|[0m[0m
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libcontext] [0m[36m<tls.c @  204> [0m(tls_area): [0m[0m0039d370  [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m38 [0m[0m00 [0m[0m [0m[0m|[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m8[0m[0m.[0m[0m|[0m[0m
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libcontext] [0m[36m<tls.c @  204> [0m(tls_area): [0m[0m0039d380  [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m39 [0m[0m00 [0m[0m [0m[0m|[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m9[0m[0m.[0m[0m|[0m[0m
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libcontext] [0m[36m<tls.c @  204> [0m(tls_area): [0m[0m0039d390  [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m3a [0m[0m00 [0m[0m [0m[0m|[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m:[0m[0m.[0m[0m|[0m[0m
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libcontext] [0m[36m<tls.c @  204> [0m(tls_area): [0m[0m0039d3a0  [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m [0m[0ma8 [0m[0md3 [0m[0m39 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m [0m[0m|[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m9[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m|[0m[0m
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libcontext] [0m[36m<tls.c @  204> [0m(tls_area): [0m[0m0039d3b0  [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m3c [0m[0m00 [0m[0m [0m[0m|[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m<[0m[0m.[0m[0m|[0m[0m
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libcontext] [0m[36m<tls.c @  204> [0m(tls_area): [0m[0m0039d3c0  [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m [0m[0mb8 [0m[0m5c [0m[0m2f [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m [0m[0m|[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m\[0m[0m/[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m|[0m[0m
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libcontext] [0m[36m<tls.c @  204> [0m(tls_area): [0m[0m0039d3d0  [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m3e [0m[0m00 [0m[0m [0m[0m|[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m>[0m[0m.[0m[0m|[0m[0m
+[0m[0m[32m[    0.000000] [0m[37mdbg:[0m  [0m[33m[libcontext] [0m[36m<tls.c @  204> [0m*
+[0m[0m[32m[    0.000000] [0m[1m[32mInfo:[0m [0m[33m[libukboot] [0m[36m<boot.c @  289> [0mInitialize IRQ subsystem...
+[0m[0m[32m[    0.000000] [0m[1m[32mInfo:[0m [0m[33m[libukboot] [0m[36m<boot.c @  296> [0mInitialize platform time...
+[0m[0m[32m[    0.000000] [0m[1m[32mInfo:[0m [0m[33m[libkvmplat] [0m[36m<tscclock.c @  255> [0mCalibrating TSC clock against i8254 timer
+[0m[0m[32m[    0.100000] [0m[1m[32mInfo:[0m [0m[33m[libkvmplat] [0m[36m<tscclock.c @  277> [0mClock source: TSC, frequency estimate is 2395140990 Hz
+[0m[0m[32m[    0.127299] [0m[1m[32mInfo:[0m [0m[33m[libukboot] [0m[36m<boot.c @  300> [0mInitialize scheduling...
+[0m[0m[32m[    0.148479] [0m[1m[32mInfo:[0m [0m[33m[libukschedcoop] [0m[36m<schedcoop.c @  255> [0mInitializing cooperative scheduler
+[0m[0m[32m[    0.171132] [0m[37mdbg:[0m  [0m[33m[libuksched] [0m[36m<thread.c @  256> [0muk_thread 0x39e0b0 (idle): ctx:0x39e0b0, ectx:0x39f3f0, tlsp:0x39f320
+[0m[0m[32m[    0.197515] [0m[37mdbg:[0m  [0m[33m[libcontext] [0m[36m<tls.c @  174> [0mtls_area_init: target: 0x39f020 (968 bytes)
+[0m[0m[32m[    0.219314] [0m[37mdbg:[0m  [0m[33m[libcontext] [0m[36m<tls.c @  176> [0mtls_area_init: copy (.tdata): 20 bytes
+[0m[0m[32m[    0.240315] [0m[37mdbg:[0m  [0m[33m[libcontext] [0m[36m<tls.c @  178> [0mtls_area_init: uninitialized (.tbss): 744 bytes
+[0m[0m[32m[    0.262707] [0m[37mdbg:[0m  [0m[33m[libcontext] [0m[36m<tls.c @  180> [0mtls_area_init: pad: 4 bytes
+[0m[0m[32m[    0.282022] [0m[37mdbg:[0m  [0m[33m[libcontext] [0m[36m<tls.c @  182> [0mtls_area_init: tcb: 200 bytes
+[0m[0m[32m[    0.301659] [0m[37mdbg:[0m  [0m[33m[libcontext] [0m[36m<tls.c @  184> [0mtls_area_init: tcb self ptr: 0x39f320
+[0m[0m[32m[    0.322539] [0m[37mdbg:[0m  [0m[33m[libmuslglue] [0m[36m<__uk_init_tls.c @  212> [0mukarch_tls_tcb_init tcb 0x39f320
+[0m[0m[32m[    0.344297] [0m[37mdbg:[0m  [0m[33m[libcontext] [0m[36m<tls.c @  204> [0m(tls_area): [0m[0m0039f020  [0m[0m0d [0m[0mf0 [0m[0mb0 [0m[0mb0 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m [0m[0mff [0m[0mff [0m[0mff [0m[0mff [0m[0mff [0m[0mff [0m[0mff [0m[0mff [0m[0m [0m[0m|[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m|[0m[0m
+[0m[0m[32m[    0.420189] [0m[37mdbg:[0m  [0m[33m[libcontext] [0m[36m<tls.c @  204> [0m(tls_area): [0m[0m0039f030  [0m[0mff [0m[0mff [0m[0mff [0m[0mff [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m [0m[0m|[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m|[0m[0m
+[0m[0m[32m[    0.496029] [0m[37mdbg:[0m  [0m[33m[libcontext] [0m[36m<tls.c @  204> [0m(tls_area): [0m[0m0039f040  [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m [0m[0m|[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m|[0m[0m
+[0m[0m[32m[    0.572455] [0m[37mdbg:[0m  [0m[33m[libcontext] [0m[36m<tls.c @  204> [0m*
+[0m[0m[32m[    0.587775] [0m[37mdbg:[0m  [0m[33m[libcontext] [0m[36m<tls.c @  204> [0m(tls_area): [0m[0m0039f320  [0m[0m20 [0m[0mf3 [0m[0m39 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m [0m[0m28 [0m[0mf3 [0m[0m39 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m [0m[0m|[0m[0m [0m[0m.[0m[0m9[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m([0m[0m.[0m[0m9[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m|[0m[0m
+[0m[0m[32m[    0.674790] [0m[37mdbg:[0m  [0m[33m[libcontext] [0m[36m<tls.c @  204> [0m(tls_area): [0m[0m0039f330  [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m [0m[0m|[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m|[0m[0m
+[0m[0m[32m[    1.019496] [0m[37mdbg:[0m  [0m[33m[libcontext] [0m[36m<tls.c @  204> [0m*
+[0m[0m[32m[    1.056578] [0m[37mdbg:[0m  [0m[33m[libcontext] [0m[36m<tls.c @  204> [0m(tls_area): [0m[0m0039f380  [0m[0m20 [0m[0m00 [0m[0mfc [0m[0m3f [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m [0m[0m00 [0m[0m00 [0m[0m01 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m [0m[0m|[0m[0m [0m[0m.[0m[0m.[0m[0m?[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m|[0m[0m
+[0m[0m[32m[    1.207350] [0m[37mdbg:[0m  [0m[33m[libcontext] [0m[36m<tls.c @  204> [0m(tls_area): [0m[0m0039f390  [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m [0m[0m|[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m|[0m[0m
+[0m[0m[32m[    1.354403] [0m[37mdbg:[0m  [0m[33m[libcontext] [0m[36m<tls.c @  204> [0m(tls_area): [0m[0m0039f3a0  [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m [0m[0m00 [0m[0m10 [0m[0m3a [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m [0m[0m|[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m:[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m|[0m[0m
+[0m[0m[32m[    1.470223] [0m[37mdbg:[0m  [0m[33m[libcontext] [0m[36m<tls.c @  204> [0m(tls_area): [0m[0m0039f3b0  [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m [0m[0m|[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m|[0m[0m
+[0m[0m[32m[    1.612454] [0m[37mdbg:[0m  [0m[33m[libcontext] [0m[36m<tls.c @  204> [0m*
+[0m[0m[32m[    1.672208] [0m[37mdbg:[0m  [0m[33m[libcontext] [0m[36m<tls.c @  204> [0m(tls_area): [0m[0m0039f3d0  [0m[0m18 [0m[0m5c [0m[0m2f [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m [0m[0m|[0m[0m.[0m[0m\[0m[0m/[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m|[0m[0m
+[0m[0m[32m[    1.838137] [0m[37mdbg:[0m  [0m[33m[libcontext] [0m[36m<tls.c @  204> [0m(tls_area): [0m[0m0039f3e0  [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m00 [0m[0m [0m[0m   [0m[0m   [0m[0m   [0m[0m   [0m[0m   [0m[0m   [0m[0m   [0m[0m   [0m[0m [0m[0m|[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m.[0m[0m|[0m[0m
+[0m[0m[32m[    2.057608] [0m[37mdbg:[0m  [0m[33m[libmuslglue] [0m[36m<__uk_init_tls.c @  181> [0muk_thread_uktcb_init uk_thread 0x39e0b0, tcb 0x39f320
+[0m[0m[32m[    2.083261] [0m[37mdbg:[0m  [0m[33m[libcontext] [0m[36m<ctx.c @  134> [0mukarch_ctx 0x39e0b0: entry:0x141a60(39e018), sp:0x3ffd0018
+[0m[0m[32m[    2.125383] [0m[37mdbg:[0m  [0m[33m[libuksched] [0m[36m<thread.c @  146> [0muk_thread 0x39e0b0 (idle) init: Call initialization 0x119400()...
+[0m[0m[32m[    2.151273] [0m[37mdbg:[0m  [0m[33m[libposix_process] [0m[36m<process.c @  416> [0mthread 0x39e0b0 (idle): Parent 0 (<n/a>) has no PID, skipping...
+[0m[0m[32m[    2.178151] [0m[37mdbg:[0m  [0m[33m[libuksched] [0m[36m<thread.c @  256> [0muk_thread 0x3a2018 (init): ctx:0x3a2018, ectx:0x3a20d0, tlsp:0x39d320
+[0m[0m[32m[    2.222161] [0m[37mdbg:[0m  [0m[33m[libuksched] [0m[36m<thread.c @  146> [0muk_thread 0x3a2018 (init) init: Call initialization 0x119400()...
+[0m[0m[32m[    2.247930] [0m[37mdbg:[0m  [0m[33m[libposix_process] [0m[36m<process.c @  416> [0mthread 0x3a2018 (init): Parent 0 (<n/a>) has no PID, skipping...
+[0m[0m[32m[    2.293185] [0m[1m[32mInfo:[0m [0m[33m[libukboot] [0m[36m<boot.c @  319> [0mInit Table @ 0x293048 - 0x293108
+[0m[0m[32m[    2.340440] [0m[37mdbg:[0m  [0m[33m[libukboot] [0m[36m<boot.c @  322> [0mCall init function: 0x144570()...
+[0m[0m[32m[    2.384008] [0m[37mdbg:[0m  [0m[33m[libvfscore] [0m[36m<main.c @ 1990> [0m(int) uk_syscall_r_dup2((int) 0x0, (int) 0x1)
+[0m[0m[32m[    2.446591] [0m[37mdbg:[0m  [0m[33m[libvfscore] [0m[36m<main.c @ 1937> [0m(int) uk_syscall_r_dup3((int) 0x0, (int) 0x1, (int) 0x0)
+[0m[0m[32m[    2.537442] [0m[37mdbg:[0m  [0m[33m[libvfscore] [0m[36m<main.c @ 1990> [0m(int) uk_syscall_r_dup2((int) 0x0, (int) 0x2)
+[0m[0m[32m[    2.600313] [0m[37mdbg:[0m  [0m[33m[libvfscore] [0m[36m<main.c @ 1937> [0m(int) uk_syscall_r_dup3((int) 0x0, (int) 0x2, (int) 0x0)
+[0m[0m[32m[    2.722162] [0m[37mdbg:[0m  [0m[33m[libukboot] [0m[36m<boot.c @  322> [0mCall init function: 0x1360a0()...
+[0m[0m[32m[    2.743551] [0m[1m[32mInfo:[0m [0m[33m[libukbus] [0m[36m<bus.c @  134> [0mInitialize bus handlers...
+[0m[0m[32m[    2.825914] [0m[37mdbg:[0m  [0m[33m[libukbus] [0m[36m<bus.c @   76> [0mInitialize bus handler 0x294020...
+[0m[0m[32m[    2.868978] [0m[37mdbg:[0m  [0m[33m[libukbus] [0m[36m<bus.c @   76> [0mInitialize bus handler 0x294080...
+[0m[0m[32m[    2.966496] [0m[1m[32mInfo:[0m [0m[33m[libuk9p] [0m[36m<9pdev_trans.c @   59> [0mRegistered transport virtio
+[0m[0m[32m[    2.988210] [0m[1m[32mInfo:[0m [0m[33m[libukbus] [0m[36m<bus.c @  136> [0mProbe buses...
+[0m[0m[32m[    3.024326] [0m[37mdbg:[0m  [0m[33m[libukbus] [0m[36m<bus.c @   88> [0mProbe bus 0x294020...
+[0m[0m[32m[    3.043459] [0m[37mdbg:[0m  [0m[33m[libkvmpci] [0m[36m<pci_bus_x86.c @  213> [0mProbe PCI
+[0m[0m[32m[    3.081749] [0m[1m[32mInfo:[0m [0m[33m[libkvmpci] [0m[36m<pci_bus_x86.c @  164> [0mPCI 00:00.00 (0600 8086:1237): [0m[0m<no driver>
+[0m[0m[32m[    3.107563] [0m[1m[32mInfo:[0m [0m[33m[libkvmpci] [0m[36m<pci_bus_x86.c @  164> [0mPCI 00:01.00 (0600 8086:7000): [0m[0m<no driver>
+[0m[0m[32m[    3.158895] [0m[1m[32mInfo:[0m [0m[33m[libkvmpci] [0m[36m<pci_bus_x86.c @  164> [0mPCI 00:02.00 (0200 1af4:1000): [0m[0mdriver 0x2940c0
+[0m[0m[32m[    3.202697] [0m[1m[32mInfo:[0m [0m[33m[libkvmvirtio] [0m[36m<virtio_pci.c @  385> [0mAdded virtio-pci device 1000
+[0m[0m[32m[    3.242480] [0m[1m[32mInfo:[0m [0m[33m[libkvmvirtio] [0m[36m<virtio_pci.c @  387> [0mAdded virtio-pci subsystem_device_id 0001
+[0m[0m[32m[    3.317379] [0m[1m[32mInfo:[0m [0m[33m[libkvmvirtio] [0m[36m<virtio_bus.c @  127> [0mVirtio device 0x3a4018 initialized
+[0m[0m[32m[    3.399505] [0m[1m[32mInfo:[0m [0m[33m[libuknetdev] [0m[36m<netdev.c @  170> [0mRegistered netdev0: 0x3a5028 (virtio-net)
+[0m[0m[32m[    3.422782] [0m[37mdbg:[0m  [0m[33m[libkvmvirtionet] [0m[36m<virtio_net.c @ 1209> [0mvirtio-net device registered with libuknet
+[0m[0m[32m[    3.447683] [0m[1m[32mInfo:[0m [0m[33m[libkvmpci] [0m[36m<pci_bus_x86.c @  164> [0mPCI 00:03.00 (0000 1af4:1009): [0m[0mdriver 0x2940c0
+[0m[0m[32m[    3.492650] [0m[1m[32mInfo:[0m [0m[33m[libkvmvirtio] [0m[36m<virtio_pci.c @  385> [0mAdded virtio-pci device 1009
+[0m[0m[32m[    3.537453] [0m[1m[32mInfo:[0m [0m[33m[libkvmvirtio] [0m[36m<virtio_pci.c @  387> [0mAdded virtio-pci subsystem_device_id 0009
+[0m[0m[32m[    3.562133] [0m[1m[32mInfo:[0m [0m[33m[libkvmvirtio] [0m[36m<virtio_bus.c @  127> [0mVirtio device 0x3a8018 initialized
+[0m[0m[32m[    3.604593] [0m[1m[32mInfo:[0m [0m[33m[libkvmvirtio9p] [0m[36m<virtio_9p.c @  405> [0mvirtio-9p: Configured: features=0x1 tag=fs0
+[0m[0m[32m[    3.630685] [0m[1m[32mInfo:[0m [0m[33m[libkvmvirtio9p] [0m[36m<virtio_9p.c @  418> [0mvirtio-9p: fs0 started
+[0m[0m[32m[    3.673683] [0m[37mdbg:[0m  [0m[33m[libukbus] [0m[36m<bus.c @   88> [0mProbe bus 0x294080...
+[0m[0m[32m[    3.712176] [0m[37mdbg:[0m  [0m[33m[libukboot] [0m[36m<boot.c @  322> [0mCall init function: 0x15fae0()...
+[0m[0m[32m[    3.733433] [0m[1m[32mInfo:[0m [0m[33m[libvfscore] [0m[36m<rootfs.c @  121> [0mMount 9pfs to /...
+[0m[0m[32m[    3.802137] [0m[37mdbg:[0m  [0m[33m[libvfscore] [0m[36m<mount.c @  113> [0m(int) uk_syscall_r_mount((const char*) 0x27f4ee, (const char*) 0x2804e3, (const char*) 0x27cc99, (unsigned long) 0x0, (const void*) 0x27f97d)
+[0m[0m[32m[    3.862792] [0m[1m[32mInfo:[0m [0m[33m[libvfscore] [0m[36m<mount.c @  122> [0mVFS: mounting 9pfs at /
+[0m[0m[32m[    3.901685] [0m[37mdbg:[0m  [0m[33m[libuk9p] [0m[36m<9p.c @  102> [0mTVERSION msize 520192 version 9P2000.u
+[0m[0m[32m[    3.922918] [0m[37mdbg:[0m  [0m[33m[libkvmvirtio] [0m[36m<virtio_ring.c @  368> [0mOld head:0, new head:2, total_desc:2
+[0m[0m[32m[    3.987749] [0m[37mdbg:[0m  [0m[33m[libkvmvirtio9p] [0m[36m<virtio_9p.c @  285> [0mnotify queue 0
+[0m[0m[32m[    4.030920] [0m[37mdbg:[0m  [0m[33m[libuk9p] [0m[36m<9p.c @  112> [0mRVERSION msize 520192 version 9P2000.u
+[0m[0m[32m[    4.071647] [0m[37mdbg:[0m  [0m[33m[libuk9p] [0m[36m<9p.c @  153> [0mTATTACH fid 0 afid 4294967295 uname  aname  n_uname 4294967295
+[0m[0m[32m[    4.096715] [0m[37mdbg:[0m  [0m[33m[libkvmvirtio] [0m[36m<virtio_ring.c @  368> [0mOld head:0, new head:2, total_desc:2
+[0m[0m[32m[    4.158515] [0m[37mdbg:[0m  [0m[33m[libkvmvirtio9p] [0m[36m<virtio_9p.c @  285> [0mnotify queue 0
+[0m[0m[32m[    4.179062] [0m[37mdbg:[0m  [0m[33m[libuk9p] [0m[36m<9p.c @  168> [0mRATTACH qid type 128 version 1680095066 path 54399326
+[0m[0m[32m[    4.204658] [0m[37mdbg:[0m  [0m[33m[libukboot] [0m[36m<boot.c @  322> [0mCall init function: 0x1d9810()...
+[0m[0m[32m[    4.226239] [0m[37mdbg:[0m  [0m[33m[libvfscore] [0m[36m<main.c @  756> [0m(int) uk_syscall_r_ioctl((int) 0x1, (unsigned long int) 0x5413, (void*) 0x393ab8)
+[0m[0m[32m[    4.255281] [0m[37mdbg:[0m  [0m[33m[libvfscore] [0m[36m<main.c @  687> [0m(ssize_t) uk_syscall_r_writev((int) 0x1, (const struct iovec *) 0x393a50, (int) 0x2)
+[0minit function init_rte_log_init
+[0m[32m[    4.292302] [0m[37mdbg:[0m  [0m[33m[libukboot] [0m[36m<boot.c @  322> [0mCall init function: 0x1fd9d0()...
+[0m[0m[32m[    4.314010] [0m[37mdbg:[0m  [0m[33m[libvfscore] [0m[36m<main.c @  687> [0m(ssize_t) uk_syscall_r_writev((int) 0x1, (const struct iovec *) 0x393ab0, (int) 0x2)
+[0minit function init_classinitfn_eth
+[0m[32m[    4.349698] [0m[37mdbg:[0m  [0m[33m[libukboot] [0m[36m<boot.c @  322> [0mCall init function: 0x119a60()...
+[0m[0m[32m[    4.371136] [0m[37mdbg:[0m  [0m[33m[libposix_process] [0m[36m<process.c @  174> [0mProcess PID 0: New thread TID 0
+[0m[0m[32m[    4.394252] [0m[37mdbg:[0m  [0m[33m[libposix_process] [0m[36m<process.c @  283> [0mProcess PID 0 created (parent PID: -1)
+[0m[0m[32m[    4.417688] [0m[37mdbg:[0m  [0m[33m[libukboot] [0m[36m<boot.c @  322> [0mCall init function: 0x1df2f0()...
+[0m[0m[32m[    4.438820] [0m[37mdbg:[0m  [0m[33m[libvfscore] [0m[36m<main.c @  687> [0m(ssize_t) uk_syscall_r_writev((int) 0x1, (const struct iovec *) 0x393ab0, (int) 0x2)
+[0minit function init_rte_timer_init
+[0m[32m[    4.474102] [0m[37mdbg:[0m  [0m[33m[libukboot] [0m[36m<boot.c @  322> [0mCall init function: 0x1df8a0()...
+[0m[0m[32m[    4.495389] [0m[37mdbg:[0m  [0m[33m[libvfscore] [0m[36m<main.c @  687> [0m(ssize_t) uk_syscall_r_writev((int) 0x1, (const struct iovec *) 0x393ab0, (int) 0x2)
+[0minit function init_rte_rand_init
+[0m[32m[    4.533976] [0m[37mdbg:[0m  [0m[33m[libukboot] [0m[36m<boot.c @  322> [0mCall init function: 0x1e8920()...
+[0m[0m[32m[    4.556897] [0m[37mdbg:[0m  [0m[33m[libvfscore] [0m[36m<main.c @  687> [0m(ssize_t) uk_syscall_r_writev((int) 0x1, (const struct iovec *) 0x393ab0, (int) 0x2)
+[0minit function init_rte_rtm_init
+[0m[32m[    4.593284] [0m[37mdbg:[0m  [0m[33m[libukboot] [0m[36m<boot.c @  322> [0mCall init function: 0x1e8950()...
+[0m[0m[32m[    4.614916] [0m[37mdbg:[0m  [0m[33m[libvfscore] [0m[36m<main.c @  687> [0m(ssize_t) uk_syscall_r_writev((int) 0x1, (const struct iovec *) 0x393ab0, (int) 0x2)
+[0minit function init_tailqinitfn_rte_ring_tailq
+[0m[32m[    4.653062] [0m[37mdbg:[0m  [0m[33m[libukboot] [0m[36m<boot.c @  322> [0mCall init function: 0x1e9270()...
+[0m[0m[32m[    4.675040] [0m[37mdbg:[0m  [0m[33m[libvfscore] [0m[36m<main.c @  687> [0m(ssize_t) uk_syscall_r_writev((int) 0x1, (const struct iovec *) 0x393ab0, (int) 0x2)
+[0minit function init_mp_hdlr_init_ops_sp_mc
+[0m[32m[    4.711717] [0m[37mdbg:[0m  [0m[33m[libukboot] [0m[36m<boot.c @  322> [0mCall init function: 0x1e9240()...
+[0m[0m[32m[    4.732925] [0m[37mdbg:[0m  [0m[33m[libvfscore] [0m[36m<main.c @  687> [0m(ssize_t) uk_syscall_r_writev((int) 0x1, (const struct iovec *) 0x393ab0, (int) 0x2)
+[0minit function init_mp_hdlr_init_ops_mp_sc
+[0m[32m[    4.769281] [0m[37mdbg:[0m  [0m[33m[libukboot] [0m[36m<boot.c @  322> [0mCall init function: 0x1e9210()...
+[0m[0m[32m[    4.790450] [0m[37mdbg:[0m  [0m[33m[libvfscore] [0m[36m<main.c @  687> [0m(ssize_t) uk_syscall_r_writev((int) 0x1, (const struct iovec *) 0x393ab0, (int) 0x2)
+[0minit function init_mp_hdlr_init_ops_sp_sc
+[0m[32m[    4.827186] [0m[37mdbg:[0m  [0m[33m[libukboot] [0m[36m<boot.c @  322> [0mCall init function: 0x1e91e0()...
+[0m[0m[32m[    4.848574] [0m[37mdbg:[0m  [0m[33m[libvfscore] [0m[36m<main.c @  687> [0m(ssize_t) uk_syscall_r_writev((int) 0x1, (const struct iovec *) 0x393ab0, (int) 0x2)
+[0minit function init_mp_hdlr_init_ops_mp_mc
+[0m[32m[    4.884627] [0m[37mdbg:[0m  [0m[33m[libukboot] [0m[36m<boot.c @  322> [0mCall init function: 0x1ea2c0()...
+[0m[0m[32m[    4.905719] [0m[37mdbg:[0m  [0m[33m[libvfscore] [0m[36m<main.c @  687> [0m(ssize_t) uk_syscall_r_writev((int) 0x1, (const struct iovec *) 0x393ab0, (int) 0x2)
+[0minit function init_tailqinitfn_rte_mempool_tailq
+[0m[32m[    4.942818] [0m[37mdbg:[0m  [0m[33m[libukboot] [0m[36m<boot.c @  322> [0mCall init function: 0x1f0900()...
+[0m[0m[32m[    4.964439] [0m[37mdbg:[0m  [0m[33m[libvfscore] [0m[36m<main.c @  687> [0m(ssize_t) uk_syscall_r_writev((int) 0x1, (const struct iovec *) 0x393ab0, (int) 0x2)
+[0minit function init_rte_net_crc_init
+[0m[32m[    4.999635] [0m[37mdbg:[0m  [0m[33m[libukboot] [0m[36m<boot.c @  322> [0mCall init function: 0x1f17b0()...
+[0m[0m[32m[    5.023854] [0m[37mdbg:[0m  [0m[33m[libvfscore] [0m[36m<main.c @  687> [0m(ssize_t) uk_syscall_r_writev((int) 0x1, (const struct iovec *) 0x393ab0, (int) 0x2)
+[0minit function init_ethdev_init_log
+[0m[32m[    5.063622] [0m[37mdbg:[0m  [0m[33m[libukboot] [0m[36m<boot.c @  322> [0mCall init function: 0x1f1770()...
+[0m[0m[32m[    5.087959] [0m[37mdbg:[0m  [0m[33m[libvfscore] [0m[36m<main.c @  687> [0m(ssize_t) uk_syscall_r_writev((int) 0x1, (const struct iovec *) 0x393ab0, (int) 0x2)
+[0minit function init_eth_dev_init_cb_lists
+[0m[32m[    5.131438] [0m[37mdbg:[0m  [0m[33m[libukboot] [0m[36m<boot.c @  322> [0mCall init function: 0x20a640()...
+[0m[0m[32m[    5.154947] [0m[37mdbg:[0m  [0m[33m[libvfscore] [0m[36m<main.c @  687> [0m(ssize_t) uk_syscall_r_writev((int) 0x1, (const struct iovec *) 0x393ab0, (int) 0x2)
+[0minit function init_tailqinitfn_rte_hash_tailq
+[0m[32m[    5.195824] [0m[37mdbg:[0m  [0m[33m[libukboot] [0m[36m<boot.c @  322> [0mCall init function: 0x20a620()...
+[0m[0m[32m[    5.217264] [0m[37mdbg:[0m  [0m[33m[libvfscore] [0m[36m<main.c @  687> [0m(ssize_t) uk_syscall_r_writev((int) 0x1, (const struct iovec *) 0x393ab0, (int) 0x2)
+[0minit function init_rte_hash_crc_init_alg
+[0m[32m[    5.253951] [0m[37mdbg:[0m  [0m[33m[libukboot] [0m[36m<boot.c @  322> [0mCall init function: 0x218450()...
+[0m[0m[32m[    5.275247] [0m[37mdbg:[0m  [0m[33m[libvfscore] [0m[36m<main.c @  687> [0m(ssize_t) uk_syscall_r_writev((int) 0x1, (const struct iovec *) 0x393ab0, (int) 0x2)
+[0minit function init_tailqinitfn_rte_fbk_hash_tailq
+[0m[32m[    5.312544] [0m[37mdbg:[0m  [0m[33m[libukboot] [0m[36m<boot.c @  322> [0mCall init function: 0x218430()...
+[0m[0m[32m[    5.333898] [0m[37mdbg:[0m  [0m[33m[libvfscore] [0m[36m<main.c @  687> [0m(ssize_t) uk_syscall_r_writev((int) 0x1, (const struct iovec *) 0x393ab0, (int) 0x2)
+[0minit function init_rte_hash_crc_init_alg
+[0m[32m[    5.370827] [0m[37mdbg:[0m  [0m[33m[libukboot] [0m[36m<boot.c @  322> [0mCall init function: 0x21d010()...
+[0m[0m[32m[    5.391655] [0m[37mdbg:[0m  [0m[33m[libvfscore] [0m[36m<main.c @  687> [0m(ssize_t) uk_syscall_r_writev((int) 0x1, (const struct iovec *) 0x393ab0, (int) 0x2)
+[0minit function init_rte_hash_crc_init_alg
+[0m[32m[    5.429347] [0m[37mdbg:[0m  [0m[33m[libukboot] [0m[36m<boot.c @  322> [0mCall init function: 0x225840()...
+[0m[0m[32m[    5.451111] [0m[37mdbg:[0m  [0m[33m[libvfscore] [0m[36m<main.c @  687> [0m(ssize_t) uk_syscall_r_writev((int) 0x1, (const struct iovec *) 0x393ab0, (int) 0x2)
+[0minit function init_mp_hdlr_init_pmd_uk_netbuf
+[0m[32m[    5.487958] [0m[37mdbg:[0m  [0m[33m[libvfscore] [0m[36m<main.c @  687> [0m(ssize_t) uk_syscall_r_writev((int) 0x1, (const struct iovec *) 0x393e90, (int) 0x2)
+[0mPowered by
+[0m[32m[    5.519312] [0m[37mdbg:[0m  [0m[33m[libvfscore] [0m[36m<main.c @  687> [0m(ssize_t) uk_syscall_r_writev((int) 0x1, (const struct iovec *) 0x393e90, (int) 0x2)
+[0mo.   .o       _ _               __ _
+[0m[32m[    5.553877] [0m[37mdbg:[0m  [0m[33m[libvfscore] [0m[36m<main.c @  687> [0m(ssize_t) uk_syscall_r_writev((int) 0x1, (const struct iovec *) 0x393e90, (int) 0x2)
+[0mOo   Oo  ___ (_) | __ __  __ _ ' _) :_
+[0m[32m[    5.588809] [0m[37mdbg:[0m  [0m[33m[libvfscore] [0m[36m<main.c @  687> [0m(ssize_t) uk_syscall_r_writev((int) 0x1, (const struct iovec *) 0x393e90, (int) 0x2)
+[0moO   oO ' _ `| | |/ /  _)' _` | |_|  _)
+[0m[32m[    5.623741] [0m[37mdbg:[0m  [0m[33m[libvfscore] [0m[36m<main.c @  687> [0m(ssize_t) uk_syscall_r_writev((int) 0x1, (const struct iovec *) 0x393e90, (int) 0x2)
+[0moOo oOO| | | | |   (| | | (_) |  _) :_
+[0m[32m[    5.669838] [0m[37mdbg:[0m  [0m[33m[libvfscore] [0m[36m<main.c @  687> [0m(ssize_t) uk_syscall_r_writev((int) 0x1, (const struct iovec *) 0x393e90, (int) 0x2)
+[0m OoOoO ._, ._:_:_,\_._,  .__,_:_, \___)
+[0m[32m[    5.705023] [0m[37mdbg:[0m  [0m[33m[libvfscore] [0m[36m<main.c @  687> [0m(ssize_t) uk_syscall_r_writev((int) 0x1, (const struct iovec *) 0x393ac0, (int) 0x2)
+[0m      Epimetheus 0.12.0~0c57d5e1-custom
+[0m[32m[    5.740210] [0m[1m[32mInfo:[0m [0m[33m[libukboot] [0m[36m<boot.c @  349> [0mPre-init table at 0x293148 - 0x293148
+[0m[0m[32m[    5.762073] [0m[1m[32mInfo:[0m [0m[33m[libukboot] [0m[36m<boot.c @  360> [0mConstructor table at 0x293148 - 0x293148
+[0m[0m[32m[    5.784592] [0m[1m[32mInfo:[0m [0m[33m[libukboot] [0m[36m<boot.c @  369> [0mCalling main(1, [[0m[0m'build/app-test-helloworld_kvm-x86_64'[0m[0m])
+[0m[0m[32m[    5.812299] [0m[37mdbg:[0m  [0m[33m[librte_eal] [0m[36m<eal_lcore.c @   14> [0mDetecting core: 0
+[0m[0m[32m[    5.831349] [0m[37mdbg:[0m  [0m[33m[librte_eal] [0m[36m<eal_lcore.c @   14> [0mDetecting core: 1
+[0m[0m[32m[    5.850412] [0m[37mdbg:[0m  [0m[33m[libvfscore] [0m[36m<main.c @  687> [0m(ssize_t) uk_syscall_r_writev((int) 0x2, (const struct iovec *) 0x393a00, (int) 0x2)
+[0mEAL: Detected 2 lcore(s)
+[0m[32m[    5.883352] [0m[37mdbg:[0m  [0m[33m[libvfscore] [0m[36m<main.c @  687> [0m(ssize_t) uk_syscall_r_writev((int) 0x2, (const struct iovec *) 0x393a00, (int) 0x2)
+[0mEAL: Detected 1 NUMA nodes
+[0m[32m[    5.916670] [0m[37mdbg:[0m  [0m[33m[librte_eal] [0m[36m<uk_eal.c @  331> [0minitialized the cpu_init
+[0m[0m[32m[    5.936378] [0m[37mdbg:[0m  [0m[33m[librte_eal] [0m[36m<uk_eal.c @  335> [0m1.master:0
+[0m[0m[32m[    5.953982] [0m[37mdbg:[0m  [0m[33m[librte_eal] [0m[36m<uk_eal.c @  201> [0mLCORE_ROLE 0:0
+[0m[0m[32m[    5.972141] [0m[37mdbg:[0m  [0m[33m[librte_eal] [0m[36m<uk_eal.c @  202> [0mLCORE_ROLE 1:0
+[0m[0m[32m[    5.990313] [0m[37mdbg:[0m  [0m[33m[librte_eal] [0m[36m<uk_eal.c @  203> [0menabled 0:1
+[0m[0m[32m[    6.007937] [0m[37mdbg:[0m  [0m[33m[librte_eal] [0m[36m<uk_eal.c @  204> [0menabled 1:1
+[0m[0m[32m[    6.025644] [0m[37mdbg:[0m  [0m[33m[librte_eal] [0m[36m<uk_eal.c @  205> [0m2.master:0
+[0m[0m[32m[    6.043185] [0m[37mdbg:[0m  [0m[33m[librte_eal] [0m[36m<uk_eal.c @  224> [0mrc=0
+[0m[0m[32m[    6.059797] [0m[37mdbg:[0m  [0m[33m[librte_eal] [0m[36m<uk_eal.c @  344> [0mparsed argument
+[0m[0m[32m[    6.078120] [0m[37mdbg:[0m  [0m[33m[librte_eal] [0m[36m<uk_eal.c @  354> [0mdev_args parsed
+[0m[0m[32m[    6.096482] [0m[37mdbg:[0m  [0m[33m[librte_eal] [0m[36m<uk_eal.c @  285> [0mInitializing the primary process config
+[0m[0m[32m[    6.124157] [0m[1m[32mInfo:[0m [0m[33m[librte_eal] [0m[36m<uk_eal.c @  276> [0mconfig create success
+[0m[0m[32m[    6.144021] [0m[37mdbg:[0m  [0m[33m[librte_eal] [0m[36m<uk_eal.c @  356> [0mstart hugepage info init
+[0m[0m[32m[    6.163682] [0m[37mdbg:[0m  [0m[33m[libvfscore] [0m[36m<main.c @  687> [0m(ssize_t) uk_syscall_r_writev((int) 0x1, (const struct iovec *) 0x393a20, (int) 0x2)
+[0meal_hugepage_info_init: left memory: 1069375488 huge pages of size: 2097152 and count: 509
+[0m[32m[    6.207158] [0m[37mdbg:[0m  [0m[33m[librte_eal] [0m[36m<uk_eal.c @  365> [0mstart memzone init
+[0m[0m[32m[    6.226070] [0m[37mdbg:[0m  [0m[33m[libvfscore] [0m[36m<main.c @  687> [0m(ssize_t) uk_syscall_r_writev((int) 0x1, (const struct iovec *) 0x3919b0, (int) 0x2)
+[0mmmap_len: 188416 len: 2560 elt_sz: 72
+[0m[32m[    6.262070] [0m[1m[32mInfo:[0m [0m[33m[librte_eal] [0m[36m<uk_fbarray.c @  826> [0m0x2f5d28 0x2f5d28 --- 0x28070d
+[0m[0m[32m[    6.284086] [0m[37mdbg:[0m  [0m[33m[librte_eal] [0m[36m<uk_eal.c @  374> [0mstart memory init
+[0m[0m[32m[    6.302715] [0m[37mdbg:[0m  [0m[33m[libvfscore] [0m[36m<main.c @  687> [0m(ssize_t) uk_syscall_r_writev((int) 0x1, (const struct iovec *) 0x3939d0, (int) 0x2)
+[0mrte_eal_hugepage_init: Configure 32768 of segments
+[0m[32m[    6.339660] [0m[37mdbg:[0m  [0m[33m[libvfscore] [0m[36m<main.c @  687> [0m(ssize_t) uk_syscall_r_writev((int) 0x1, (const struct iovec *) 0x391960, (int) 0x2)
+[0mmmap_len: 1581056 len: 32768 elt_sz: 48
+[0m[32m[    6.386147] [0m[1m[32mInfo:[0m [0m[33m[librte_eal] [0m[36m<uk_fbarray.c @  826> [0m0x2f5db0 0x2f5db0 --- 0x27ff5c
+[0m[0m[32m[    6.408686] [0m[37mdbg:[0m  [0m[33m[libukmmap] [0m[36m<mmap.c @   68> [0m(void*) uk_syscall_e_mmap((void*) 0x0, (size_t) 0x8000000, (int) 0x3, (int) 0x22, (int) 0xffffffffffffffff, (off_t) 0x0)
+[0m[0m[32m[    7.107027] [0m[37mdbg:[0m  [0m[33m[librte_eal] [0m[36m<uk_eal.c @  386> [0mstart heap init
+[0m[0m[32m[    7.125545] [0m[1m[33mWarn:[0m [0m[33m[librte_eal] [0m[36m<uk_eal_common_proc.c @   31> [0mmp_malloc_request action not supported
+[0m[0m[32m[    7.150097] [0m[37mdbg:[0m  [0m[33m[librte_eal] [0m[36m<uk_eal.c @  392> [0mstart tailqs init
+[0m[0m[32m[    7.168732] [0m[37mdbg:[0m  [0m[33m[librte_eal] [0m[36m<uk_eal.c @  398> [0mstart master thread init
+[0m[0m[32m[    7.188485] [0m[37mdbg:[0m  [0m[33m[librte_eal] [0m[36m<uk_eal.c @  400> [0mstart SMP
+[0m[0m[32m[    7.205930] [0m[37mdbg:[0m  [0m[33m[librte_eal] [0m[36m<uk_eal.c @  414> [0mlcpu start
+[0m[0m[32m[    7.223379] [0m[37mdbg:[0m  [0m[33m[librte_eal] [0m[36m<uk_eal.c @  415> [0mlcpu count:2
+[0m[0m[32m[    7.419818] [0m[37mdbg:[0m  [0m[33m[librte_eal] [0m[36m<uk_eal.c @  419> [0mlcpu wait
+[0m[0m[32m[    7.437211] [0m[37mdbg:[0m  [0m[33m[librte_eal] [0m[36m<uk_eal.c @  424> [0mcreate pipe
+[0m[0m[32m[    7.454842] [0m[37mdbg:[0m  [0m[33m[librte_eal] [0m[36m<uk_eal.c @  438> [0mlcpu run
+[0m[0m[32m[    7.472111] [0m[37mdbg:[0m  [0m[33m[librte_eal] [0m[36m<uk_eal.c @  440> [0mremote launch loop
+[0m[0m[32m[    7.490918] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   41> [0m[1m[31mRIP: 00000000001a02c1 CS: 0008
+[0m[0m[32m[    7.514784] [0m[37mdbg:[0m  [0m[33m[librte_eal] [0m[36m<uk_eal.c @  442> [0mwait lcore
+[0m[0m[32m[    7.532321] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   43> [0m[1m[31mRSP: 00000000002efd90 SS: 0010 EFLAGS: 00010006
+[0m[0m[32m[    7.559251] [0m[37mdbg:[0m  [0m[33m[librte_eal] [0m[36m<uk_eal.c @  446> [0mnetdevice init
+[0m[0m[32m[    7.577754] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   45> [0m[1m[31mRAX: 00000000002f0080 RBX: 0000000000000040 RCX: 0000000080202021
+[0m[0m[32m[    7.607673] [0m[37mdbg:[0m  [0m[33m[libuk_pmd] [0m[36m<uk_pmd.c @  680> [0muk_netdev cnt:1
+[0m[0m[32m[    7.625837] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   47> [0m[1m[31mRDX: 00000000001d5630 RSI: 0000000000000000 RDI: 0000000000000000
+[0m[0m[32m[    7.655756] [0m[1m[32mInfo:[0m [0m[33m[libuk_pmd] [0m[36m<uk_pmd.c @  685> [0muk_pmd: Registered netdev id 0 @ 0x3a5028
+[0m[0m[32m[    7.678640] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   49> [0m[1m[31mRBP: 00000000002efee0 R08: 000000000027c37c R09: 000000000027c7ca
+[0m[0m[32m[    7.708522] [0m[37mdbg:[0m  [0m[33m[libvfscore] [0m[36m<main.c @  115> [0m(int) uk_syscall_r_open((const char*) 0x393f1a, (int) 0x241, (mode_t) 0x1b6)
+[0m[0m[32m[    7.736383] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   51> [0m[1m[31mR10: 0000000000000000 R11: 0000000000000000 R12: 00000000002f0080
+[0m[0m[32m[    7.766180] [0m[37mdbg:[0m  [0m[33m[libuk9p] [0m[36m<9p.c @  223> [0mTWALK fid 0 newfid 1 nwname 1 name core2
+[0m[0m[32m[    7.787340] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   53> [0m[1m[31mR13: 00000000002a1bc0 R14: 0000000000000000 R15: 0000000000000000
+[0m[0m[32m[    7.816893] [0m[37mdbg:[0m  [0m[33m[libkvmvirtio] [0m[36m<virtio_ring.c @  368> [0mOld head:0, new head:2, total_desc:2
+[0m[0m[32m[    7.839509] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   86> [0m[1m[31mbase is 0x2efee0 [0m
+[0m[32m[    7.861367] [0m[37mdbg:[0m  [0m[33m[libkvmvirtio9p] [0m[36m<virtio_9p.c @  285> [0mnotify queue 0
+[0m[0m[32m[    7.880407] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   87> [0m[1m[31mcaller is 0x10e61c
+[0m[0m[32m[    7.902953] [0m[37mdbg:[0m  [0m[33m[libuk9p] [0m[36m<9p.c @  244> [0mRWALK nwqid 1
+[0m[0m[32m[    7.920255] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   86> [0m[1m[31mbase is 0x2eff00 [0m
+[0m[32m[    7.942278] [0m[37mdbg:[0m  [0m[33m[libuk9p] [0m[36m<9p.c @  516> [0mTSTAT fid 1
+[0m[0m[32m[    7.959649] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   87> [0m[1m[31mcaller is 0x10e418
+[0m[0m[32m[    7.981572] [0m[37mdbg:[0m  [0m[33m[libkvmvirtio] [0m[36m<virtio_ring.c @  368> [0mOld head:0, new head:2, total_desc:2
+[0m[0m[32m[    8.004697] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   86> [0m[1m[31mbase is 0x2eff40 [0m
+[0m[32m[    8.026389] [0m[37mdbg:[0m  [0m[33m[libkvmvirtio9p] [0m[36m<virtio_9p.c @  285> [0mnotify queue 0
+[0m[0m[32m[    8.046113] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   87> [0m[1m[31mcaller is 0x10c75b
+[0m[0m[32m[    8.068075] [0m[37mdbg:[0m  [0m[33m[libuk9p] [0m[36m<9p.c @  524> [0mRSTAT
+[0m[0m[32m[    8.085223] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   86> [0m[1m[31mbase is 0x3ffb7fc0 [0m
+[0m[32m[    8.106776] [0m[37mdbg:[0m  [0m[33m[libuk9p] [0m[36m<9p.c @  223> [0mTWALK fid 1 newfid 2 nwname 0 name <NULL>
+[0m[0m[32m[    8.128384] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   87> [0m[1m[31mcaller is 0x10e9bd
+[0m[0m[32m[    8.149420] [0m[37mdbg:[0m  [0m[33m[libkvmvirtio] [0m[36m<virtio_ring.c @  368> [0mOld head:0, new head:2, total_desc:2
+[0m[0m[32m[    8.171991] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   86> [0m[1m[31mbase is 0x3ffb7ff0 [0m
+[0m[32m[    8.194289] [0m[37mdbg:[0m  [0m[33m[libkvmvirtio9p] [0m[36m<virtio_9p.c @  285> [0mnotify queue 0
+[0m[0m[32m[    8.213616] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   87> [0m[1m[31mcaller is 0x4b8d001543c60475
+[0m[0m[32m[    8.236769] [0m[37mdbg:[0m  [0m[33m[libuk9p] [0m[36m<9p.c @  244> [0mRWALK nwqid 0
+[0m[0m[32m[    8.253865] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   66> [0m[1m[31m
+[0m[0m[32m[    8.272487] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   66> [0m[1m[31m2efd80:[0m
+[0m[32m[    8.292168] [0m[37mdbg:[0m  [0m[33m[libuk9p] [0m[36m<9p.c @  276> [0mTOPEN fid 2 mode 17
+[0m[0m[32m[    8.310159] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   67> [0m[1m[31m 90[0m
+[0m[32m[    8.329008] [0m[37mdbg:[0m  [0m[33m[libkvmvirtio] [0m[36m<virtio_ring.c @  368> [0mOld head:0, new head:2, total_desc:2
+[0m[0m[32m[    8.351811] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   67> [0m[1m[31m fd[0m
+[0m[32m[    8.370601] [0m[37mdbg:[0m  [0m[33m[libkvmvirtio9p] [0m[36m<virtio_9p.c @  285> [0mnotify queue 0
+[0m[0m[32m[    8.389801] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   67> [0m[1m[31m 2e[0m
+[0m[32m[    8.409297] [0m[37mdbg:[0m  [0m[33m[libuk9p] [0m[36m<9p.c @  287> [0mROPEN qid type 0 version 1681139981 path 54404194 iounit 516096
+[0m[0m[32m[    8.437768] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   67> [0m[1m[31m 00[0m
+[0m[32m[    8.457029] [0m[37mdbg:[0m  [0m[33m[libvfscore] [0m[36m<main.c @  756> [0m(int) uk_syscall_r_ioctl((int) 0x3, (unsigned long int) 0x5413, (void*) 0x393ea8)
+[0m[0m[32m[    8.489364] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   67> [0m[1m[31m 00[0m[0m[1m[31m 00[0m[0m[1m[31m 00[0m[0m[1m[31m 00[0m
+[0m[32m[    8.517721] [0m[37mdbg:[0m  [0m[33m[libvfscore] [0m[36m<main.c @  687> [0m(ssize_t) uk_syscall_r_writev((int) 0x3, (const struct iovec *) 0x393e50, (int) 0x2)
+[0m[0m[32m[    8.550416] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   67> [0m[1m[31m 10[0m
+[0m[32m[    8.569453] [0m[37mdbg:[0m  [0m[33m[libuk9p] [0m[36m<9p.c @  223> [0mTWALK fid 1 newfid 3 nwname 0 name <NULL>
+[0m[0m[32m[    8.593678] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   67> [0m[1m[31m 00[0m
+[0m[32m[    8.612698] [0m[37mdbg:[0m  [0m[33m[libkvmvirtio] [0m[36m<virtio_ring.c @  368> [0mOld head:0, new head:2, total_desc:2
+[0m[0m[32m[    8.638382] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   67> [0m[1m[31m 00[0m[0m[1m[31m 00[0m[0m[1m[31m 00[0m
+[0m[32m[    8.663410] [0m[37mdbg:[0m  [0m[33m[libkvmvirtio9p] [0m[36m<virtio_9p.c @  285> [0mnotify queue 0
+[0m[0m[32m[    8.685069] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   67> [0m[1m[31m 00[0m[0m[1m[31m 00[0m
+[0m[32m[    8.707357] [0m[37mdbg:[0m  [0m[33m[libuk9p] [0m[36m<9p.c @  244> [0mRWALK nwqid 0
+[0m[0m[32m[    8.726847] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   67> [0m[1m[31m 00[0m[0m[1m[31m
+[0m[0m[32m[    8.748463] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   66> [0m[1m[31m2efd90:[0m[0m[1m[31m e0[0m[0m[1m[31m fe[0m[0m[1m[31m 2e[0m[0m[1m[31m 00[0m[0m[1m[31m 00[0m[0m[1m[31m 00[0m[0m[1m[31m 00[0m[0m[1m[31m 00[0m[0m[1m[31m 49[0m
+[0m[32m[    8.796178] [0m[37mdbg:[0m  [0m[33m[libuk9p] [0m[36m<9p.c @  276> [0mTOPEN fid 3 mode 1
+[0m[0m[32m[    8.816716] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   67> [0m[1m[31m 56[0m
+[0m[32m[    8.835715] [0m[37mdbg:[0m  [0m[33m[libkvmvirtio] [0m[36m<virtio_ring.c @  368> [0mOld head:0, new head:2, total_desc:2
+[0m[0m[32m[    8.861635] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   67> [0m[1m[31m 1d[0m
+[0m[32m[    8.880321] [0m[37mdbg:[0m  [0m[33m[libkvmvirtio9p] [0m[36m<virtio_9p.c @  285> [0mnotify queue 0
+[0m[0m[32m[    8.902056] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   67> [0m[1m[31m 00[0m
+[0m[32m[    8.921566] [0m[37mdbg:[0m  [0m[33m[libuk9p] [0m[36m<9p.c @  287> [0mROPEN qid type 0 version 1681143991 path 54404194 iounit 516096
+[0m[0m[32m[    8.949693] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   67> [0m[1m[31m 00[0m
+[0m[32m[    8.968857] [0m[37mdbg:[0m  [0m[33m[libuk9p] [0m[36m<9p.c @  483> [0mTWRITE fid 3 offset 0 count 17
+[0m[0m[32m[    8.990967] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   67> [0m[1m[31m 00[0m
+[0m[32m[    9.009928] [0m[37mdbg:[0m  [0m[33m[libkvmvirtio] [0m[36m<virtio_ring.c @  368> [0mOld head:0, new head:3, total_desc:3
+[0m[0m[32m[    9.035808] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   67> [0m[1m[31m 00[0m[0m[1m[31m 00[0m[0m[1m[31m
+[0m[0m[32m[    9.060481] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   66> [0m[1m[31m2efda0:[0m[0m[1m[31m 00[0m[0m[1m[31m 00[0m[0m[1m[31m 00[0m
+[0m[32m[    9.089297] [0m[37mdbg:[0m  [0m[33m[libkvmvirtio9p] [0m[36m<virtio_9p.c @  285> [0mnotify queue 0
+[0m[0m[32m[    9.111226] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   67> [0m[1m[31m 00[0m
+[0m[32m[    9.131278] [0m[37mdbg:[0m  [0m[33m[libuk9p] [0m[36m<9p.c @  496> [0mRWRITE count 17
+[0m[0m[32m[    9.150371] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   67> [0m[1m[31m 00[0m[0m[1m[31m 00[0m[0m[1m[31m 00[0m[0m[1m[31m 00[0m[0m[1m[31m 00[0m
+[0m[32m[    9.183033] [0m[37mdbg:[0m  [0m[33m[libuk9p] [0m[36m<9p.c @  427> [0mTCLUNK fid 3
+[0m[0m[32m[    9.202019] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   67> [0m[1m[31m 00[0m
+[0m[32m[    9.222015] [0m[37mdbg:[0m  [0m[33m[libkvmvirtio] [0m[36m<virtio_ring.c @  368> [0mOld head:0, new head:2, total_desc:2
+[0m[0m[32m[    9.248029] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   67> [0m[1m[31m 00[0m
+[0m[32m[    9.267267] [0m[37mdbg:[0m  [0m[33m[libkvmvirtio9p] [0m[36m<virtio_9p.c @  285> [0mnotify queue 0
+[0m[0m[32m[    9.288908] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   67> [0m[1m[31m 00[0m[0m[1m[31m 00[0m
+[0m[32m[    9.311945] [0m[37mdbg:[0m  [0m[33m[libuk9p] [0m[36m<9p.c @  431> [0mRCLUNK
+[0m[0m[32m[    9.330160] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   67> [0m[1m[31m 00[0m[0m[1m[31m 00[0m[0m[1m[31m 00[0m
+[0m[32m[    9.355913] [0m[37mdbg:[0m  [0m[33m[libvfscore] [0m[36m<main.c @  269> [0m(int) uk_syscall_r_close((int) 0x3)
+[0m[0m[32m[    9.379876] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   66> [0m[1m[31m
+[0m[0m[32m[    9.398967] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   66> [0m[1m[31m2efdb0:[0m[0m[1m[31m 00[0m
+[0m[32m[    9.423390] [0m[37mdbg:[0m  [0m[33m[libuk9p] [0m[36m<9p.c @  427> [0mTCLUNK fid 2
+[0m[0m[32m[    9.442750] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   67> [0m[1m[31m 00[0m[0m[1m[31m 00[0m[0m[1m[31m 00[0m[0m[1m[31m 00[0m
+[0m[32m[    9.473257] [0m[37mdbg:[0m  [0m[33m[libkvmvirtio] [0m[36m<virtio_ring.c @  368> [0mOld head:0, new head:2, total_desc:2
+[0m[0m[32m[    9.498736] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   67> [0m[1m[31m 00[0m[0m[1m[31m 00[0m[0m[1m[31m 00[0m[0m[1m[31m 00[0m
+[0m[32m[    9.527340] [0m[37mdbg:[0m  [0m[33m[libkvmvirtio9p] [0m[36m<virtio_9p.c @  285> [0mnotify queue 0
+[0m[0m[32m[    9.549284] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   67> [0m[1m[31m 00[0m[0m[1m[31m 00[0m[0m[1m[31m 00[0m[0m[1m[31m 00[0m
+[0m[32m[    9.579333] [0m[37mdbg:[0m  [0m[33m[libuk9p] [0m[36m<9p.c @  431> [0mRCLUNK
+[0m[0m[32m[    9.597146] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   67> [0m[1m[31m 00[0m[0m[1m[31m 00[0m[0m[1m[31m 00[0m
+[0m[32m[    9.623134] [0m[37mdbg:[0m  [0m[33m[libuk9p] [0m[36m<9p.c @  427> [0mTCLUNK fid 1
+[0m[0m[32m[    9.642417] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   69> [0m[1m[31m
+[0m[0m[32m[    9.661319] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   66> [0m[1m[31m
+[0m[0m[32m[    9.679850] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   66> [0m[1m[31m2efed0:[0m
+[0m[32m[    9.699585] [0m[37mdbg:[0m  [0m[33m[libkvmvirtio] [0m[36m<virtio_ring.c @  368> [0mOld head:0, new head:2, total_desc:2
+[0m[0m[32m[    9.725372] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   67> [0m[1m[31m 00[0m[0m[1m[31m 00[0m[0m[1m[31m 00[0m[0m[1m[31m 00[0m[0m[1m[31m 00[0m[0m[1m[31m 00[0m
+[0m[32m[    9.760675] [0m[37mdbg:[0m  [0m[33m[libkvmvirtio9p] [0m[36m<virtio_9p.c @  285> [0mnotify queue 0
+[0m[0m[32m[    9.782604] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   67> [0m[1m[31m 00[0m[0m[1m[31m 00[0m[0m[1m[31m 00[0m
+[0m[32m[    9.808196] [0m[37mdbg:[0m  [0m[33m[libuk9p] [0m[36m<9p.c @  431> [0mRCLUNK
+[0m[0m[32m[    9.826037] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   67> [0m[1m[31m 00[0m[0m[1m[31m 00[0m
+[0m[32m[    9.848132] [0m[1m[32mInfo:[0m [0m[33m[libukboot] [0m[36m<boot.c @  378> [0mmain returned 0, halting system
+[0m[0m[32m[    9.871828] [0m[1m[37m[41mCRIT:[0m [0m[33m[libkvmplat] [0m[36m<trace.c @   67> [0m[1m[31m 00[0m
+[0m[32m[    9.894637] [0m[1m[32mInfo:[0m [0m[33m[libkvmplat] [0m[36m<shutdown.c @   35> [0mUnikraft halted
+[0m

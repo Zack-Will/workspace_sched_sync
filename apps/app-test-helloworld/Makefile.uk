@@ -1,0 +1,3 @@
+# /apps/appname/Makefile.uk
+$(eval $(call addlib,apptesthelloworld))
+APPTESTHELLOWORLD_SRCS-y += $(APPTESTHELLOWORLD_BASE)/main.c
